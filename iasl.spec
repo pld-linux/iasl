@@ -8,6 +8,7 @@ Group:		Applications/System
 #Source0Download: http://www.intel.com/technology/iapc/acpi/license2.htm
 Source0:	http://www.intel.com/technology/iapc/acpi/downloads/acpica-unix-%{version}.tar.gz
 # Source0-md5:	181d99a4228f4bf5309e1b56a0a7e5a8
+Patch0:		%{name}-make.patch
 URL:		http://www.intel.com/technology/iapc/acpi/downloads.htm
 BuildRequires:	bison
 BuildRequires:	flex
@@ -27,6 +28,7 @@ disasemblowaæ AML w celach diagnostycznych.
 
 %prep
 %setup -q -n acpica-unix-%{version}
+%patch0 -p1
 
 # extract license text
 sed -e '1,6d;114q' osunixxf.c > LICENSE
@@ -36,14 +38,14 @@ sed -e '1,6d;114q' osunixxf.c > LICENSE
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags} -Wall -D_LINUX -DACPI_ASL_COMPILER -I../include"
 
+%{__make} -C tools/acpisrc \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -Wall -D_LINUX -DACPI_APPLICATION -I../../include"
+
 # doesn't build currently, some code missing (AcpiGbl_Db*)
 #%{__make} -C tools/acpiexec \
 #	CC="%{__cc}" \
 #	CFLAGS="%{rpmcflags} -Wall -D_LINUX -DNDEBUG -D_CONSOLE -DACPI_EXEC_APP -D_MULTI_THREADED -I../../include"
-
-%{__make} -C tools/acpisrc \
-	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -Wall -D_LINUX -DACPI_APPLICATION -I../../include"
 
 %{__make} -C tools/acpixtract \
 	CC="%{__cc}" \
