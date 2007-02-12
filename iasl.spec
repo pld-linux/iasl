@@ -1,5 +1,5 @@
 Summary:	ACPI CA for Linux
-Summary(pl):	ACPI CA dla Linuksa
+Summary(pl.UTF-8):   ACPI CA dla Linuksa
 Name:		iasl
 Version:	20060912
 Release:	1
@@ -20,11 +20,11 @@ ACPI CA contains iasl, an ASL compiler/decompiler. It compiles ASL
 suitable for inclusion as a DSDT in system firmware. It also can
 disassemble AML, for debugging purposes.
 
-%description -l pl
+%description -l pl.UTF-8
 ACPI CA zawiera iasl - kompilator/dekompilator ASL. Kompiluje ASL
 (ACPI Source Language) do AML (ACPI Machine Language). Ten AML nadaje
-siê do umieszczenia w DSDT firmware'u systemu. iasl potrafi tak¿e
-disasemblowaæ AML w celach diagnostycznych.
+siÄ™ do umieszczenia w DSDT firmware'u systemu. iasl potrafi takÅ¼e
+disasemblowaÄ‡ AML w celach diagnostycznych.
 
 %prep
 %setup -q -n acpica-unix-%{version}
