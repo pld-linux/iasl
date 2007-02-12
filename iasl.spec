@@ -1,5 +1,5 @@
 Summary:	ACPI CA for Linux
-Summary(pl.UTF-8):   ACPI CA dla Linuksa
+Summary(pl.UTF-8):	ACPI CA dla Linuksa
 Name:		iasl
 Version:	20060912
 Release:	1
