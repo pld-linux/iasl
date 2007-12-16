@@ -1,13 +1,13 @@
 Summary:	ACPI CA for Linux
 Summary(pl.UTF-8):	ACPI CA dla Linuksa
 Name:		iasl
-Version:	20060912
+Version:	20061109
 Release:	1
 License:	BSD-like
 Group:		Applications/System
 #Source0Download: http://www.intel.com/technology/iapc/acpi/license2.htm
 Source0:	http://www.intel.com/technology/iapc/acpi/downloads/acpica-unix-%{version}.tar.gz
-# Source0-md5:	181d99a4228f4bf5309e1b56a0a7e5a8
+# Source0-md5:	0ca508dd9bec10fb3b53c72aea6bb6a1
 Patch0:		%{name}-make.patch
 URL:		http://www.intel.com/technology/iapc/acpi/downloads.htm
 BuildRequires:	bison
